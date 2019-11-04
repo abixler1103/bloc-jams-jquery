@@ -1,9 +1,9 @@
-class helper {
-  
-  const helper = helper;
-  }
-  playPauseAndUpdate (song) {
-    return player.playPause(song);
-
+class Helper {
+  playPauseAndUpdate(song) {
+    player.playPause(song);
+    console.log(player);
+    $('#time-control .total-time').text(player.playState);
   }
 }
+
+const helper = new Helper();
