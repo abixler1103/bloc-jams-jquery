@@ -20,7 +20,10 @@
 
     const currentSongIndex = album.songs.indexOf(player.currentlyPlaying);
     const previousSongIndex = currentSongIndex - 1;
-    if (previousSongIndex >= album.songs.length) { return; }
+    if (previousSongIndex >= 0) {
+      if (previousSongIndex >= album.songs.length) { return; }
+    }
+    else { return [0]; }
     
     const previousSong = album.songs[previousSongIndex];
     helper.playPauseAndUpdate(previousSong);
